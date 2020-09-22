@@ -38,19 +38,17 @@ int push_stack(stack_m **stack, long value)
     return 0;
 }
 
-void pull_stack(stack_m **stack)
+stack_m *pull_stack(stack_m *stack)
 {
-    if(is_empty(*stack))
+    if(is_empty(stack))
     {
-        perror("ERROR : Empty stack cannot pull entity\n");
-        return;
+        printf("Warning : Empty stack cannot pull entity\n");
+        return stack;
     }
-    stack_m **stk = stack;
-    free(*stack);
-    *stack = (*stk)->prev_stk_m;
-    return;
+    stack_m *stk = stack->prev_stk_m;
+    free(stack);
+    return stk;
 }
-
 
 int is_empty(stack_m *stack)
 {
@@ -58,7 +56,6 @@ int is_empty(stack_m *stack)
         return 1;
     return 0;
 }
-
 
 int can_push_into(stack_m *stack)
 {

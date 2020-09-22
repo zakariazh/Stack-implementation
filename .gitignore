@@ -2,3 +2,4 @@ stack.o
 build.sh
 libstack.so
 test
+test.c
