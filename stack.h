@@ -16,6 +16,7 @@ stack_m *pull_stack(stack_m *stack);
 int is_empty(stack_m *stack);
 int can_push_into(stack_m *stack);
 void trace_stack(stack_m *stack);
-void destroy_stack(stack_m *stack);
+void destroy_stack(stack_m **stack);
+
 
 #endif

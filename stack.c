@@ -80,3 +80,14 @@ void trace_stack(stack_m *stack)
     printf("\n");
 }
 
+void destroy_stack(stack_m **stack)
+{
+    if(is_empty(*stack))
+        return;
+    int len = (*stack)->actuel_nbr_elemnt;
+    for(int i=0; i<len; i++)
+    {
+        *stack = pull_stack(*stack);
+    }
+}
+
