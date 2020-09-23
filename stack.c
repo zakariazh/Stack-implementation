@@ -91,3 +91,7 @@ void destroy_stack(stack_m **stack)
     }
 }
 
+int getSize_stack(stack_m *stack)
+{
+    return (is_empty(stack) ? 0 : stack->actuel_nbr_elemnt);
+}
